@@ -12,7 +12,6 @@ class CustomType extends CustomTypeAction
         array(
             'name'               => 'Samples',
             'singular_name'      => 'Sample',
-            'rewrite'            => array('slug' => 'Samples'),
             'add_new'            => 'Ajouter',
             'add_new_item'       => 'Ajouter un example',
             'edit_item'          => 'Modifier l\'example',
@@ -27,11 +26,11 @@ class CustomType extends CustomTypeAction
         $args =
         array(
             'labels'            => $labels,
+            'rewrite'           => array('slug' => 'Samples'),
             'public'            => true,
             'publicly_queryable'=> true,
             'show_ui'           => true,
             'query_var'         => true,
-            'rewrite'           => true,
             'capability_type'   => 'post',
             'hierarchical'      => false,
             'menu_position'     => 4,

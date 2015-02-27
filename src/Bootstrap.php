@@ -21,3 +21,7 @@ add_action('admin_print_scripts'        , array('Bundle\AdminBundle\Application\
 add_action('admin_print_scripts'        , array('Bundle\AdminBundle\Application\Hook', 'adminLoadCss'));
 add_action('admin_menu'                 , array('Bundle\AdminBundle\Application\Hook', 'removeEditorMenu'));
 add_action('wp_before_admin_bar_render' , array('Bundle\AdminBundle\Application\Hook', 'adminBarRender'));
+
+
+// A tester, supprimer caractere spéciaux et accentué dans les nom des images
+add_filter('sanitize_file_name', 'remove_accents');

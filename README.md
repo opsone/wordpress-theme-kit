@@ -5,10 +5,16 @@ Create empty wordpress theme with minimal developper kit
 
 ## Installation
 
+Install composer in your project:
+
+```bash
+$ curl -s https://getcomposer.org/installer | php
+```
+
 Simply install with composer:
 
 ```bash
-$ composer create-project opsone/wordpress-theme-kit path/to/install/
+$ php composer.phar create-project opsone/wordpress-theme-kit path/to/install/
 ```
 
 ## Composer

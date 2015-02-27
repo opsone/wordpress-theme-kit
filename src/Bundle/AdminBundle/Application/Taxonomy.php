@@ -6,9 +6,9 @@ use WpThemeKitLib\Application\Taxonomy as TaxonomyAction;
 
 class Taxonomy extends TaxonomyAction
 {
-    public function type()
+    public static function type()
     {
-        registerTaxonomy('type',
+        register_taxonomy('type',
 
             array(
                 'post',
