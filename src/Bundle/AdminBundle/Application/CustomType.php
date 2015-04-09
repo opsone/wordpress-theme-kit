@@ -34,7 +34,7 @@ class CustomType extends CustomTypeAction
             'capability_type'   => 'post',
             'hierarchical'      => false,
             'menu_position'     => 4,
-            'supports'          => array('title', 'editor', 'thumbnail', 'post_tag'),
+            'supports'          => array('title', 'editor', 'thumbnail', 'post_tag', 'revisions'),
             'menu_icon'         => get_template_directory_uri() . '/assets/admin/img/sample.png'
         );
 
