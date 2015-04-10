@@ -37,7 +37,7 @@ class Hook extends HookAction
     public static function menuPages()
     {
         remove_menu_page('edit-comments.php');
-        remove_menu_page('plugins.php');
+        // remove_menu_page('plugins.php');
 
         // remove_menu_page('index.php');
         // remove_menu_page('themes.php');
