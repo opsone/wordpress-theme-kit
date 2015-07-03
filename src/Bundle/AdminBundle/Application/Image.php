@@ -2,7 +2,7 @@
 
 namespace Bundle\AdminBundle\Application;
 
-use WpThemeKitLib\Application\Image as ImageAction;
+use Bundle\CoreBundle\Application\Image as ImageAction;
 
 class Image extends ImageAction
 {

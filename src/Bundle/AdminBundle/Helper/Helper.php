@@ -2,7 +2,7 @@
 
 namespace Bundle\AdminBundle\Helper;
 
-use WpThemeKitLib\Helper\Helper as HelperAction;
+use Bundle\CoreBundle\Helper\Helper as HelperAction;
 
 class Helper extends HelperAction
 {
@@ -69,4 +69,3 @@ class Helper extends HelperAction
             return false;
     }
 }
-

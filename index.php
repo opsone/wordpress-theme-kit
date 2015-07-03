@@ -43,20 +43,4 @@
         </div><!-- .entry-content -->
     </article>
 
-    <footer>
-        <div class="entry-content">
-            <h2>Contact</h2>
-            <p>Use Zend Framework 2 for front form</p>
-            <?php echo $view->render->form()->openTag($view->form); ?>
-            <div><?php echo $view->render->formRow($view->form->get('name')); ?></div>
-            <div><?php echo $view->render->formRow($view->form->get('subject')); ?></div>
-            <div><?php echo $view->render->formRow($view->form->get('email')); ?></div>
-            <div><?php echo $view->render->formRow($view->form->get('message')); ?></div>
-            <div><?php echo $view->render->formRow($view->form->get('captcha')); ?></div>
-            <div><?php echo $view->render->formRow($view->form->get('security')); ?></div>
-            <div><?php echo $view->render->formSubmit($view->form->get('submit')); ?></div>
-            <?php echo $view->render->form()->closeTag(); ?>
-        </div><!-- .entry-content -->
-    </footer>
-
 <?php get_footer(); ?>

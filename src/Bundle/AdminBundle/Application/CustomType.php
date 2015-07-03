@@ -2,7 +2,7 @@
 
 namespace Bundle\AdminBundle\Application;
 
-use WpThemeKitLib\Application\CustomType as CustomTypeAction;
+use Bundle\CoreBundle\Application\CustomType as CustomTypeAction;
 
 class CustomType extends CustomTypeAction
 {

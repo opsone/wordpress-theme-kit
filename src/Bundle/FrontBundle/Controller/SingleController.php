@@ -2,7 +2,7 @@
 
 namespace Bundle\FrontBundle\Controller;
 
-use WpThemeKitLib\Controller\Controller;
+use Bundle\CoreBundle\Controller\Controller;
 
 class SingleController extends Controller
 {

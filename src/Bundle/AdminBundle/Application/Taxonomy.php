@@ -2,7 +2,7 @@
 
 namespace Bundle\AdminBundle\Application;
 
-use WpThemeKitLib\Application\Taxonomy as TaxonomyAction;
+use Bundle\CoreBundle\Application\Taxonomy as TaxonomyAction;
 
 class Taxonomy extends TaxonomyAction
 {

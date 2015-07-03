@@ -2,7 +2,7 @@
 
 namespace Bundle\FrontBundle\Application;
 
-use WpThemeKitLib\Application\Hook as HookAction;
+use Bundle\CoreBundle\Application\Hook as HookAction;
 
 class Hook extends HookAction
 {
@@ -29,4 +29,3 @@ class Hook extends HookAction
 
     }
 }
-

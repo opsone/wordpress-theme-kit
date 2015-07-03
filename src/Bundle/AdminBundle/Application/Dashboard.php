@@ -2,7 +2,7 @@
 
 namespace Bundle\AdminBundle\Application;
 
-use WpThemeKitLib\Application\Dashboard as DashboardAction;
+use Bundle\CoreBundle\Application\Dashboard as DashboardAction;
 
 class Dashboard extends DashboardAction
 {
