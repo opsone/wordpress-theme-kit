@@ -30,11 +30,6 @@ page.php -> PageController.php
 custom.php -> CustomController.php
 ...
 
-## Zend Framework 2
-Create strong form and use filter/validator in frontoffice
-
-Return properties controller in view with Zend\View\Renderer\PhpRenderer()
-
 ## Required
 Meta-box plugin for create simple meta-box.
 Site: http://www.deluxeblogtips.com/meta-box/getting-started
