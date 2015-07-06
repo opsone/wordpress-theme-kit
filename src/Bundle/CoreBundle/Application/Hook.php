@@ -26,7 +26,7 @@ class Hook
             'source'             => 'http://downloads.wordpress.org/plugin/meta-box.4.3.9.zip',
             'required'           => true,
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-            'force_activation'   => false,
+            'force_activation'   => true,
             'force_deactivation' => false,
             'external_url'       => 'http://www.deluxeblogtips.com/meta-box/getting-started/',
         );
