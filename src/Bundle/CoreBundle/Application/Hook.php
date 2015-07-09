@@ -11,7 +11,7 @@ require_once(get_stylesheet_directory() . '/vendor/tgmpa/tgm-plugin-activation/c
 class Hook
 {
 
-    public function requiredPlugins($plugins = array())
+    public static function requiredPlugins($plugins = array())
     {
         $theme = wp_get_theme();
 

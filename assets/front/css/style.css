@@ -41,14 +41,11 @@ header {
 /* Form */
 
 label span{
-    display: block;
+    display: inline-block;
+    width:200px;
 }
 
-input[type='text'], input[type='email'] {
-    width:350px;
-}
-
-textarea {
+input[type='email'], input[type='url'], input[type='text'], input[type='email'] {
     width:350px;
 }
 
@@ -58,6 +55,6 @@ form ul {
 }
 
 form li {
-    color: red;
+    margin-left: 50px;
     list-style: none;
 }

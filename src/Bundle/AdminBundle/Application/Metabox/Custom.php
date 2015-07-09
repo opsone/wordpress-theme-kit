@@ -181,7 +181,7 @@ class Custom extends FilterAction
               // DATETIME
               array(
                   'name' => 'Datetime picker',
-                  'id'   => $prefix . 'datetime',
+                  'id'   => FilterAction::PREFIX . 'datetime',
                   'type' => 'datetime',
 
                   // jQuery datetime picker options.
@@ -195,7 +195,7 @@ class Custom extends FilterAction
               // TIME
               array(
                   'name' => 'Time picker',
-                  'id'   => $prefix . 'time',
+                  'id'   => FilterAction::PREFIX . 'time',
                   'type' => 'time',
 
                   // jQuery datetime picker options.

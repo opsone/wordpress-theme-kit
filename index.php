@@ -43,4 +43,17 @@
         </div><!-- .entry-content -->
     </article>
 
+    <form action="" method="post" enctype="multipart/form-data">
+      <ul>
+        <li><label><span>firstname</span><input name="firstname" type="text" value="" /></label></li>
+        <li><label><span>url</span><input name="url" type="url" value="" /></label></li>
+        <li><label><span>email</span><input name="email" type="email" value="" /></label></li>
+        <li><label><span>cv</span><input name="cv" type="file" value="" /></label></li>
+        <li><label><span>content</span><input name="content" type="text" value="" /></label></li>
+        <li><label><span>int</span><input name="int" type="text" value="" /></label></li>
+        <li><label><span>uppercase</span><input name="uppercase" type="text" value="" /></label></li>
+        <li><input type="submit" value="send" /></li>
+      </ul>
+    </form>
+
 <?php get_footer(); ?>
