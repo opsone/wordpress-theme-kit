@@ -26,5 +26,5 @@ add_action('admin_menu'                 , array('Bundle\AdminBundle\Application\
 add_action('wp_before_admin_bar_render' , array('Bundle\AdminBundle\Application\Hook', 'adminBarRender'));
 
 
-add_filter('wp_mail_content_type'       , 'text/html');
+add_filter('wp_mail_content_type'       , array('Bundle\CoreBundle\Application\Filter', 'setHtmlContentType'));
 add_filter('sanitize_file_name'         , 'remove_accents');
