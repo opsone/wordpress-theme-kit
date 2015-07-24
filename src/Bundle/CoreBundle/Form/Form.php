@@ -48,7 +48,7 @@ class Form
       {
         foreach($field['validators'] as $key => $validator)
         {
-          if(!v::{$validator}()->validate($this->data[$name])) {
+          if(!v::$validator()->validate($this->data[$name])) {
             $this->errors[$name] = $field['errors'][$key];
           }
         }
