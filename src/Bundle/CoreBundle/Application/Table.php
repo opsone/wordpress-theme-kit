@@ -2,6 +2,6 @@
 
 namespace Bundle\CoreBundle\Application;
 
-class List
+class Table
 {
 }
