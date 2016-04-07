@@ -1,0 +1,19 @@
+{
+  "name": "#name#",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Jeremy <jeremy@opsone.net>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
