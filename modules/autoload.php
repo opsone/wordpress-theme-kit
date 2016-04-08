@@ -6,7 +6,7 @@ function dirToArray($dir) {
    $cdir = scandir($dir);
    foreach ($cdir as $key => $value)
    {
-      if (!in_array($value,array(".", "..", ".gitkeep", "controllers", "autoload.php")))
+      if (!in_array($value,array(".", "..", ".DS_Store", ".gitkeep", "controllers", "autoload.php")))
       {
          if (is_dir($dir . DIRECTORY_SEPARATOR . $value))
          {
