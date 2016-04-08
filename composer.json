@@ -33,6 +33,7 @@
             "npm install",
             "bower install"
         ],
+      "build": "gulp build",
       "watch": "gulp serve",
       "deploy-staging": "gulp deploy-staging",
       "deploy-preprod": "gulp deploy-preprod",
