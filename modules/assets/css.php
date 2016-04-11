@@ -9,7 +9,7 @@ function loadCss()
 
 function adminLoadCss()
 {
-    wp_register_style('style', get_template_directory_uri() . '/assets/admin/dist/styles.css', null, false);
+    wp_register_style('style', get_template_directory_uri() . '/assets/admin/dist/styles.min.css', null, false);
     wp_enqueue_style('style');
 }
 
