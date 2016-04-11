@@ -16,7 +16,6 @@
         }
     ],
     "require": {
-        "tgmpa/tgm-plugin-activation": "~2.4",
         "Respect/Validation": "~0.9"
     },
     "autoload": {
