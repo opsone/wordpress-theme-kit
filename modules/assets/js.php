@@ -2,6 +2,8 @@
 
 function loadJs()
 {
+    wp_deregister_script('jquery');
+
     wp_register_script('app', get_template_directory_uri() . '/assets/front/dist/scripts.min.js', array('jquery'), false, true);
 
     wp_localize_script('app', 'ajaxurl', admin_url('admin-ajax.php'));
