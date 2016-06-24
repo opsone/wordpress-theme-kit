@@ -10,7 +10,9 @@ var gulp          = require('gulp'),
         '.gitmodules',
         'gulpfile.js',
         'package.json',
+        'bower.json',
         'node_modules',
+        '.htaccess-dist',
         '*.log'
     ],
     excludeCore = [
@@ -28,6 +30,7 @@ var gulp          = require('gulp'),
         '/wp-content/themes/**'
     ],
     excludeTheme = [
+        'gulp',
         'scss',
         'js'
     ],
