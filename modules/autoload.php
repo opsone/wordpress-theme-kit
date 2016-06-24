@@ -12,7 +12,7 @@ function dirToArray($dir) {
          {
             $result = array_merge($result, dirToArray($dir . DIRECTORY_SEPARATOR . $value));
          }
-         else
+         else if (!preg_match("/.html$/i", $value))
          {
             $result[] = $dir . '/' . $value;
          }
