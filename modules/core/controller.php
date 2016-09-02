@@ -2,7 +2,6 @@
 
 function loadController($template)
 {
-    global $view;
     $template_name   = ucfirst(str_replace('.php', '', basename($template)));
     $template_name   = ucwords(str_replace('-', ' ', $template_name));
     $template_name   = str_replace(' ', '', $template_name);

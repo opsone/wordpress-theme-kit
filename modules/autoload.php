@@ -2,8 +2,8 @@
 function dirToArray($dir) {
 
    $result = array();
+   $cdir   = scandir($dir);
 
-   $cdir = scandir($dir);
    foreach ($cdir as $key => $value)
    {
       if (!in_array($value,array(".", "..", ".DS_Store", ".gitkeep", "controllers", "autoload.php")))
@@ -12,7 +12,7 @@ function dirToArray($dir) {
          {
             $result = array_merge($result, dirToArray($dir . DIRECTORY_SEPARATOR . $value));
          }
-         else if (!preg_match("/.html$/i", $value))
+         else if (!preg_match("/^_(.*)+$/i", $value))
          {
             $result[] = $dir . '/' . $value;
          }

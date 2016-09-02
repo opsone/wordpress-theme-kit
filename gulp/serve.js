@@ -26,7 +26,7 @@ var minifycss = function(path){
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(concat('styles.min.css'))
-    .pipe(cssnano())
+    .pipe(cssnano({ zindex: false }))
     .pipe(sourcemaps.write('../dist'))
     .pipe(gulp.dest(path.dist))
   ;
