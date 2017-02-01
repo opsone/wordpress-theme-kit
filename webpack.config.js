@@ -1,10 +1,10 @@
-
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var precss = require('precss');
-var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack                 = require('webpack');
+var autoprefixer            = require('autoprefixer');
+var precss                  = require('precss');
+var path                    = require('path');
+var ExtractTextPlugin       = require("extract-text-webpack-plugin");
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var CopyWebpackPlugin       = require('copy-webpack-plugin');
 
 if (typeof Promise === 'undefined') {
   // Rejection tracking prevents a common issue where React gets into an
@@ -94,7 +94,10 @@ module.exports = {
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/,
       cssProcessorOptions: { discardComments: { removeAll: true } }
-    })
+    }),
+    new CopyWebpackPlugin([
+        {from: 'app/front/images', to: 'images', force: true},
+    ])
   ],
 
   resolve: {
