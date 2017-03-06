@@ -6,7 +6,10 @@ var ExtractTextPlugin       = require("extract-text-webpack-plugin");
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var CopyWebpackPlugin       = require('copy-webpack-plugin');
 var ImageminWebpackPlugin   = require('imagemin-webpack-plugin').default;
-var ImageminMozjpeg         = require('imagemin-mozjpeg');
+var ImageminPngquant        = require('imagemin-pngquant');
+var ImageminJpegoptim       = require('imagemin-jpegoptim');
+var ImageminOptipng         = require('imagemin-optipng');
+var ImageminSvgo            = require('imagemin-svgo');
 
 if (typeof Promise === 'undefined') {
   // Rejection tracking prevents a common issue where React gets into an
@@ -65,25 +68,25 @@ module.exports = {
             loader: [ 'css-loader', 'postcss-loader' ]
         })
       },
-      // {
-      //   test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-      //   use: [ 'file-loader' ]
-      // }
-      {// for image in css file
-        test: /.*\.(gif|png|jpe?g|svg)$/i,
-        loaders: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            query: {
-              progressive: true,
-              mozjpeg: {
-                quality: 80
-              }
-            }
-          }
-        ]
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        use: [ 'file-loader' ]
       }
+      // {// for image in css file
+      //   test: /.*\.(gif|png|jpe?g|svg)$/i,
+      //   loaders: [
+      //     'file-loader',
+      //     {
+      //       loader: 'image-webpack-loader',
+      //       query: {
+      //         progressive: true,
+      //         mozjpeg: {
+      //           quality: 80
+      //         }
+      //       }
+      //     }
+      //   ]
+      // }
     ]
   },
 
@@ -118,12 +121,21 @@ module.exports = {
     ]),
     // for image use in website
     new ImageminWebpackPlugin({
-      test: 'images/**',
+      // test: 'images/**',
       plugins: [
-        ImageminMozjpeg({
-          quality: 80,
-          progressive: true
-        })
+        // ImageminMozjpeg({
+        //   quality: 80,
+        //   progressive: true
+        // }),
+        ImageminPngquant(),
+        ImageminSvgo(),
+        ImageminJpegoptim({
+          progressive: true,
+          max: 75
+        }),
+        // ImageminOptipng({
+        //   optimizationLevel: 1
+        // })
       ]
     })
   ],
