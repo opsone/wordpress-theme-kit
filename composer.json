@@ -12,14 +12,15 @@
         {
             "name": "Jeremy Chaufourier",
             "email": "jeremy@opsone.net",
-            "homepage": "https://github.com/batosai"
+            "homepage": "https://github.com/opsone"
         }
     ],
     "require": {
-        "Respect/Validation": "~0.9"
+        "Respect/Validation": "~0.9",
+        "mobiledetect/mobiledetectlib": "^2.8"
     },
     "autoload": {
-        "classmap" : ["modules/controllers"],
+        "classmap" : ["modules/core/controllers"],
         "files": [
           "modules/autoload.php"
         ]
@@ -27,15 +28,10 @@
     "scripts": {
       "post-install-cmd": [
             "php -r \"file_put_contents('style.css', str_replace('#name#', ucfirst(basename(__DIR__)), file_get_contents('style.css')));\"",
-            "php -r \"file_put_contents('bower.json', str_replace('#name#', ucfirst(basename(__DIR__)), file_get_contents('bower.json')));\"",
             "php -r \"file_put_contents('package.json', str_replace('#name#', ucfirst(basename(__DIR__)), file_get_contents('package.json')));\"",
-            "npm install",
-            "bower install"
+            "npm install"
         ],
-      "build": "gulp build",
-      "watch": "gulp serve",
-      "deploy-staging": "gulp deploy-staging",
-      "deploy-preprod": "gulp deploy-preprod",
-      "deploy-prod": "gulp deploy-prod"
+      "build": "npm run build",
+      "watch": "npm start"
     }
 }
