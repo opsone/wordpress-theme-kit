@@ -10,6 +10,7 @@ var ImageminPngquant        = require('imagemin-pngquant');
 var ImageminJpegoptim       = require('imagemin-jpegoptim');
 var ImageminOptipng         = require('imagemin-optipng');
 var ImageminSvgo            = require('imagemin-svgo');
+var jQuery                  = require('jquery');
 
 if (typeof Promise === 'undefined') {
   // Rejection tracking prevents a common issue where React gets into an
@@ -32,6 +33,8 @@ module.exports = {
 		filename: "[name].js",
     // pathinfo: true, // TODO En dev
 	},
+
+  externals: ['jQuery'],
 
   module: {
     rules: [
@@ -91,6 +94,11 @@ module.exports = {
   },
 
    plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),
     new webpack.LoaderOptionsPlugin({
       // test: /\.xxx$/, // may apply this only for some modules
       options: {
