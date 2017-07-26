@@ -1,6 +1,6 @@
 {
   "name": "#name#",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -8,34 +8,41 @@
     "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
-    "autoprefixer": "6.6.1",
-    "babel-core": "6.22.1",
-    "babel-loader": "6.2.10",
-    "babel-preset-latest": "6.22.0",
-    "babel-preset-stage-2": "6.22.0",
-    "copy-webpack-plugin": "4.0.1",
-    "css-loader": "0.26.1",
-    "eslint": "3.13.1",
-    "eslint-loader": "1.6.1",
-    "extract-text-webpack-plugin": "2.0.0-beta.5",
-    "file-loader": "0.9.0",
-    "image-webpack-loader": "3.2.0",
-    "imagemin-jpegoptim": "https://github.com/batosai/imagemin-jpegoptim.git",
-    "imagemin-pngquant": "https://github.com/batosai/imagemin-pngquant.git",
-    "imagemin-webpack-plugin": "1.4.4",
-    "json-loader": "0.5.4",
-    "optimize-css-assets-webpack-plugin": "1.3.0",
-    "postcss-loader": "1.2.2",
-    "precss": "1.4.0",
-    "promise": "7.1.1",
-    "style-loader": "0.13.1",
-    "webpack": "2.2.0"
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.2",
+    "imagemin-jpegoptim": "git+https://github.com/batosai/imagemin-jpegoptim.git",
+    "imagemin-pngquant": "git+https://github.com/batosai/imagemin-pngquant.git",
+    "imagemin-svgo": "^5.2.2",
+    "imagemin-webpack-plugin": "^1.4.4",
+    "json-loader": "^0.5.4",
+    "node-sass": "^4.5.3",
+    "optimize-css-assets-webpack-plugin": "^2.0.0",
+    "postcss-flexbugs-fixes": "^3.0.0",
+    "postcss-loader": "^2.0.5",
+    "promise": "^7.1.1",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "lodash": "^4.17.4",
     "jquery": "3.2.1"
   },
+  "eslintConfig": {
+    "ecmaVersion": 6
+  },
   "keywords": [],
-  "author": "Jeremy Chaufourier <jeremy.chaufourier@gmail.com> (http://www.chaufourier.fr)",
+  "author": "Jeremy Chaufourier <jeremy.chaufourier@opsone.net> (http://www.opsone.net)",
   "license": "ISC"
 }
