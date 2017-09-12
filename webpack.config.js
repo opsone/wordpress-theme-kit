@@ -19,8 +19,8 @@ if (typeof Promise === 'undefined') {
 }
 
 module.exports = {
-  devtool: 'eval',
-  // devtool: 'sourcemap',
+  // devtool: 'eval',
+  devtool: 'sourcemap',
 
   entry: {
 		front: "./app/front/js/index.js",
