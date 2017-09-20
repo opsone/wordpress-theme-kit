@@ -1,10 +1,11 @@
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack                 = require('webpack');
+var autoprefixer            = require('autoprefixer');
+var path                    = require('path');
+var ExtractTextPlugin       = require("extract-text-webpack-plugin");
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var CopyWebpackPlugin       = require('copy-webpack-plugin');
 var ImageminWebpackPlugin   = require('imagemin-webpack-plugin').default;
+var CompressionPlugin       = require("compression-webpack-plugin");
 var ImageminPngquant        = require('imagemin-pngquant');
 var ImageminJpegoptim       = require('imagemin-jpegoptim');
 var ImageminSvgo            = require('imagemin-svgo');
@@ -112,6 +113,13 @@ module.exports = {
           max: 75
         }),
       ]
+    }),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.(js|css)$/,
+      threshold: 10240,
+      minRatio: 0.8
     })
   ],
 
