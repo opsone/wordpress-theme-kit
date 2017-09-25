@@ -97,7 +97,7 @@ module.exports = {
     new ExtractTextPlugin("style.css"), // FOR B)
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/,
-      cssProcessorOptions: { discardComments: { removeAll: true } }
+      cssProcessorOptions: { discardComments: { removeAll: true }, zindex: false }
     }),
     // for image use in website
     new CopyWebpackPlugin([
