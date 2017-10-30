@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack.config.js --watch",
     "build": "webpack --config webpack.config.js",
-    "prettify": "prettier --single-quote --trailing-comma all --write '{app,__{tests,mocks}__}/**/*.js'"
+    "prettify": "prettier --single-quote --trailing-comma all --write '{app,__{tests,mocks}__}/**/*.js'",
+    "install": "napa"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
@@ -35,7 +36,8 @@
     "style-loader": "^0.19.0",
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.1",
-    "prettier": "^1.7.3"
+    "prettier": "^1.7.3",
+    "napa": "^3.0.0"
   },
   "dependencies": {
     "jquery": "3.2.1"
