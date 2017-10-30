@@ -2,7 +2,6 @@ var webpack                 = require('webpack');
 var autoprefixer            = require('autoprefixer');
 var path                    = require('path');
 var ExtractTextPlugin       = require("extract-text-webpack-plugin");
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var CopyWebpackPlugin       = require('copy-webpack-plugin');
 var ImageminWebpackPlugin   = require('imagemin-webpack-plugin').default;
 var CompressionPlugin       = require("compression-webpack-plugin");
@@ -49,7 +48,15 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: [
-            [ 'latest', { 'es2015': { 'modules': false } } ],
+            ["env", {
+              "targets": {
+                "chrome": 52,
+                "browsers": ["last 2 versions", "safari 7"]
+              },
+              "modules": false,
+              "useBuiltIns": true,
+              "debug": false
+            }],
             'stage-2'
           ]
         }
@@ -59,30 +66,11 @@ module.exports = {
         loader: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [
-              { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
-              { loader: 'postcss-loader', options: {
-                ident: 'postcss',
-                sourceMap: true,
-                plugins: () => [
-                  require('postcss-flexbugs-fixes'),
-                  autoprefixer({
-                    browsers: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9', // React doesn't support IE8 anyway
-                    ],
-                    flexbox: 'no-2009',
-                  })
-                ]
-              }},
+              { loader: 'css-loader', options: { minimize: true, url: false, importLoaders: 1, sourceMap: true } },
+              { loader: 'postcss-loader', options: { ident: 'postcss', sourceMap: true }},
               { loader: 'sass-loader', options: { sourceMap: true } }
             ]
         })
-      },
-      {
-        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        use: [ 'file-loader' ]
       }
     ]
   },
@@ -93,15 +81,19 @@ module.exports = {
       jQuery: "jquery",
       "window.jQuery": "jquery"
     }),
-    new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin("style.css"), // FOR B)
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/,
-      cssProcessorOptions: { discardComments: { removeAll: true }, zindex: false }
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      }
     }),
+    new ExtractTextPlugin("style.css"), // FOR B)
     // for image use in website
     new CopyWebpackPlugin([
-        {from: 'app/front/images', to: 'images', force: true},
+        {from: 'app/front/files', to: 'files'},
     ]),
     // for image use in website
     new ImageminWebpackPlugin({
