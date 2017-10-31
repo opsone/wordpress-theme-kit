@@ -5,6 +5,7 @@ var ExtractTextPlugin       = require("extract-text-webpack-plugin");
 var CopyWebpackPlugin       = require('copy-webpack-plugin');
 var ImageminWebpackPlugin   = require('imagemin-webpack-plugin').default;
 var CompressionPlugin       = require("compression-webpack-plugin");
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var ImageminPngquant        = require('imagemin-pngquant');
 var ImageminJpegoptim       = require('imagemin-jpegoptim');
 var ImageminSvgo            = require('imagemin-svgo');
@@ -90,7 +91,11 @@ module.exports = {
         comments: false
       }
     }),
-    new ExtractTextPlugin("style.css"), // FOR B)
+    new ExtractTextPlugin("style.css"),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/,
+      cssProcessorOptions: { discardComments: { removeAll: true }, zindex: false }
+    }),
     // for image use in website
     new CopyWebpackPlugin([
         {from: 'app/front/files', to: 'files'},
