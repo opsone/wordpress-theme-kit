@@ -1,37 +1,37 @@
-var webpack                 = require('webpack');
-var autoprefixer            = require('autoprefixer');
-var path                    = require('path');
-var ExtractTextPlugin       = require("extract-text-webpack-plugin");
-var CopyWebpackPlugin       = require('copy-webpack-plugin');
-var ImageminWebpackPlugin   = require('imagemin-webpack-plugin').default;
-var CompressionPlugin       = require("compression-webpack-plugin");
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-var ImageminPngquant        = require('imagemin-pngquant');
-var ImageminJpegoptim       = require('imagemin-jpegoptim');
-var ImageminSvgo            = require('imagemin-svgo');
-var jQuery                  = require('jquery');
+const webpack = require('webpack');
+const webpackMerge = require('webpack-merge');
+const path = require('path');
+const jQuery = require('jquery');
 
 if (typeof Promise === 'undefined') {
-  // Rejection tracking prevents a common issue where React gets into an
-  // inconsistent state due to an error, but it gets swallowed by a Promise,
-  // and the user has no idea what causes React's erratic future behavior.
   require('promise/lib/rejection-tracking').enable();
   window.Promise = require('promise/lib/es6-extensions.js');
 }
 
-module.exports = {
-  // devtool: 'eval',
-  devtool: 'sourcemap',
+const DEVELOPMENT_CONFIG = require('./webpack/webpack.config.dev');
+const PRODUCTION_CONFIG  = require('./webpack/webpack.config.prod');
 
+const ENV = process.env.NODE_ENV;
+const VALID_ENVIRONMENTS = ['development', 'production'];
+
+if (!VALID_ENVIRONMENTS.includes(ENV)) {
+  throw new Error(`${ ENV } is not valid environment!`);
+}
+
+const config = {
+  development: DEVELOPMENT_CONFIG,
+  production:  PRODUCTION_CONFIG
+}[ENV];
+
+const COMMON_CONFIG = {
   entry: {
-		front: "./app/front/js/index.js",
-		admin: "./app/admin"
-	},
-	output: {
-		path: path.resolve(__dirname, 'dist'),
-		filename: "[name].js",
-    // pathinfo: true, // TODO En dev
-	},
+    front: "./app/front/js/index.js",
+    admin: "./app/admin"
+  },
+
+  output: {
+    filename: "[name].js",
+  },
 
   externals: ['jQuery'],
 
@@ -56,72 +56,23 @@ module.exports = {
               },
               "modules": false,
               "useBuiltIns": true,
-              "debug": false
+              "debug": ENV === VALID_ENVIRONMENTS[0] ? true : false
             }],
             'stage-2'
           ]
         }
       },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-              { loader: 'css-loader', options: { minimize: true, url: false, importLoaders: 1, sourceMap: true } },
-              { loader: 'postcss-loader', options: { ident: 'postcss', sourceMap: true }},
-              { loader: 'sass-loader', options: { sourceMap: true } }
-            ]
-        })
-      }
     ]
   },
-
-   plugins: [
+  plugins: [
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery"
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      },
-      output: {
-        comments: false
-      }
-    }),
-    new ExtractTextPlugin("style.css"),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/,
-      cssProcessorOptions: { discardComments: { removeAll: true }, zindex: false }
-    }),
-    // for image use in website
-    new CopyWebpackPlugin([
-        {from: 'app/front/files', to: 'files'},
-    ]),
-    // for image use in website
-    new ImageminWebpackPlugin({
-      plugins: [
-        ImageminPngquant(),
-        ImageminSvgo(),
-        ImageminJpegoptim({
-          progressive: true,
-          max: 75
-        }),
-      ]
-    }),
-    new CompressionPlugin({
-      asset: "[path].gz[query]",
-      algorithm: "gzip",
-      test: /\.(js|css)$/,
-      threshold: 10240,
-      minRatio: 0.8
-    })
   ],
-
   resolve: {
-    extensions: [ '.js', ],
+    extensions: [ '.js' ],
     modules: [
       path.resolve('./app'),
       path.resolve('./node_modules')
@@ -131,4 +82,6 @@ module.exports = {
   resolveLoader: {
     modules: [ path.resolve('./node_modules') ]
   }
-}
+};
+
+module.exports = webpackMerge.smart(COMMON_CONFIG, config);
