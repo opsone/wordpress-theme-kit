@@ -9,6 +9,9 @@ const ImageminJpegoptim = require('imagemin-jpegoptim');
 const ImageminSvgo = require('imagemin-svgo');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const { exec } = require('child_process');
+
+exec('cd ./scripts;php version.php');
 
 module.exports = {
   devtool: 'sourcemap',

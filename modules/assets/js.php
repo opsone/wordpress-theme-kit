@@ -2,9 +2,11 @@
 
 function loadJs()
 {
+    $theme = wp_get_theme();
+
     wp_deregister_script('jquery');
 
-    wp_register_script('app', get_template_directory_uri() . '/dist/front.js', array(), false, true);
+    wp_register_script('app', get_template_directory_uri() . '/dist/front.js', array(), $theme->get('Version'), true);
 
     wp_localize_script('app', 'ajaxurl', admin_url('admin-ajax.php'));
 
@@ -13,7 +15,9 @@ function loadJs()
 
 function adminLoadJs()
 {
-    wp_register_script('app', get_template_directory_uri() . '/dist/admin.js', array(), false, true);
+    $theme = wp_get_theme();
+
+    wp_register_script('app', get_template_directory_uri() . '/dist/admin.js', array(), $theme->get('Version'), true);
 
     wp_localize_script('app', 'ajaxurl', admin_url('admin-ajax.php'));
 
