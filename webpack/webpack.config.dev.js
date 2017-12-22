@@ -4,12 +4,15 @@ const WriteFilePlugin = require('write-file-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const baseRootPath = path.resolve(__dirname, '../../../../../../');
+const publicPath = path.resolve(__dirname, '../dist').replace(baseRootPath, '') + '/';
+
 module.exports = {
   devtool: 'eval',
 
   output: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: "/opsone/opsone-2017/wp-content/themes/opsone-2017-theme/dist/"
+    publicPath: publicPath
   },
 
   devServer: {
