@@ -1,5 +1,5 @@
 {
-  "name": "#name#",
+  "name": "name",
   "version": "2.1.0",
   "private": true,
   "scripts": {
@@ -8,11 +8,10 @@
     "build": "rm -rf dist;env NODE_ENV=production webpack --config webpack.config.js",
     "start:dev": "rm -rf dist;env NODE_ENV=development webpack-dev-server --hot --inline",
     "install": "napa",
-    "prettify": "prettier --single-quote --trailing-comma all --write '{app,__{tests,mocks}__}/**/*.js'",
-    "install": "napa"
+    "prettify": "prettier --single-quote --trailing-comma all --write '{app,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.5",
+    "autoprefixer": "^8.2.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
@@ -23,13 +22,13 @@
     "copy-webpack-plugin": "^4.1.1",
     "css-loader": "^0.28.7",
     "eslint": "^4.8.0",
-    "eslint-loader": "^1.9.0",
-    "extract-text-webpack-plugin": "^3.0.1",
+    "eslint-loader": "^2.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "imagemin-jpegoptim": "git+https://github.com/batosai/imagemin-jpegoptim.git",
     "imagemin-pngquant": "git+https://github.com/batosai/imagemin-pngquant.git",
-    "imagemin-svgo": "^5.2.2",
-    "imagemin-webpack-plugin": "^1.5.2",
+    "imagemin-svgo": "^6.0.0",
+    "imagemin-webpack-plugin": "^2.1.0",
     "json-loader": "^0.5.7",
     "node-sass": "^4.5.3",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
@@ -37,19 +36,18 @@
     "promise": "^8.0.1",
     "resolve-url-loader": "^2.2.0",
     "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.0",
+    "style-loader": "^0.20.3",
     "write-file-webpack-plugin": "^4.2.0",
     "prettier": "^1.7.3",
     "napa": "^3.0.0",
     "webpack": "^3.7.1",
-    "webpack-dev-server": "^2.9.1",
+    "webpack-dev-server": "^3.1.1",
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
-    "jquery": "3.2.1"
+    "jquery": "3.3.1"
   },
-  "napa": {
-  },
+  "napa": {},
   "eslintConfig": {
     "ecmaVersion": 6
   },
