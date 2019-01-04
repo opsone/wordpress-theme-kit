@@ -1,6 +1,10 @@
 {
-  parser: "babel-eslint",
-  rules: {
-    strict: 0
+  "extends": "standard",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "space-before-function-paren": 0
   }
 }

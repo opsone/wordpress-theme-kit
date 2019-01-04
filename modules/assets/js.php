@@ -6,7 +6,12 @@ function loadJs()
 
     wp_deregister_script('jquery');
 
-    wp_register_script('app', get_template_directory_uri() . '/dist/front.js', array(), $theme->get('Version'), true);
+    if (ENV == 'development') {
+        wp_register_script('app', 'http://localhost:3000/front.js', array(), $theme->get('Version'), true);
+    }
+    else {
+        wp_register_script('app', get_template_directory_uri() . '/assets/dist/front.js', array(), $theme->get('Version'), true);
+    }
 
     wp_localize_script('app', 'ajaxurl', admin_url('admin-ajax.php'));
 
@@ -17,7 +22,7 @@ function adminLoadJs()
 {
     $theme = wp_get_theme();
 
-    wp_register_script('app', get_template_directory_uri() . '/dist/admin.js', array(), $theme->get('Version'), true);
+    wp_register_script('app', get_template_directory_uri() . '/assets/dist/admin.js', array(), $theme->get('Version'), true);
 
     wp_localize_script('app', 'ajaxurl', admin_url('admin-ajax.php'));
 

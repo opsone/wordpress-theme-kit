@@ -17,16 +17,26 @@ Simply install with composer:
 $ php composer.phar create-project opsone/wordpress-theme-kit path/to/install/
 ```
 
-## webpack
+## webpack 4
 
-Launch watcher files
+Launch watcher files, Mode Development
 
 ```bash
 $ npm start
 ```
 
-Launch generate files
+Make for Production
 
 ```bash
 $ npm run build
+```
+
+## Assets
+
+Use assets file in templates wordpress
+
+```php
+$ echo asset_url('logo.png');
+$ // dev => http://localhost:3000/d8de0a51d2c1ffadf2674553ff70fad2.png
+$ // prod => http://localhost/assets/dist/d8de0a51d2c1ffadf2674553ff70fad2.png
 ```
