@@ -2,8 +2,7 @@
 import '../scss/style.scss'
 
 // Import image
-import '../files/images/logo.png'
-import '../files/images/capture.png'
+// import '../files/images/logo.png'
 
 // App
 import './app'
