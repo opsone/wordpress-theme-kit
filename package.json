@@ -3,10 +3,10 @@
   "version": "2.1.0",
   "private": true,
   "scripts": {
-    "prestart": "php -r \"file_put_contents('.env', 'development');\"",
-    "start": "rm -rf dist;env NODE_ENV=development npx webpack-dev-server --hot --inline --config config/webpack/webpack.dev.js",
-    "prebuild": "php -r \"file_put_contents('.env', 'production');\" & php ./scripts/version.php",
-    "build": "rm -rf dist;env NODE_ENV=production npx webpack --config config/webpack/webpack.prod.js ",
+    "prestart": "php -r \"file_put_contents('.env', 'development');\";rm -rf assets/dist;",
+    "start": "env NODE_ENV=development npx webpack-dev-server --hot --inline --config config/webpack/webpack.dev.js",
+    "prebuild": "php -r \"file_put_contents('.env', 'production');\"; php ./scripts/version.php; rm -rf assets/dist;",
+    "build": "env NODE_ENV=production npx webpack --config config/webpack/webpack.prod.js ",
     "postbuild": "./scripts/imageOptim.sh",
     "install": "napa",
     "prettify": "prettier --write '{app,__{tests,mocks}__}/**/*.js'"
@@ -17,7 +17,6 @@
     "@babel/preset-env": "^7.2.3",
     "autoprefixer": "^9.4.4",
     "babel-loader": "^8.0.5",
-    "clean-webpack-plugin": "^0.1.19",
     "compression-webpack-plugin": "^1.1.12",
     "css-loader": "^1.0.1",
     "csv-loader": "^3.0.2",
