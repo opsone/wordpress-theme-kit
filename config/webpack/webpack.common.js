@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const WebpackBar = require('webpackbar')
 
@@ -10,7 +9,6 @@ module.exports = {
     admin: "./assets/admin"
   },
   plugins: [
-    new CleanWebpackPlugin(['../assets/dist']),
     new ManifestPlugin(),
     new webpack.ProvidePlugin({
       $: "jquery",
