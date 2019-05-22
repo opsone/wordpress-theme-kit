@@ -1,6 +1,8 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 
+require('../../scripts/watch.assets.js')
+
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'eval',

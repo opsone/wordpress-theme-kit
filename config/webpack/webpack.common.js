@@ -5,21 +5,21 @@ const WebpackBar = require('webpackbar')
 
 module.exports = {
   entry: {
-    front: "./assets/front/js/index.js",
-    admin: "./assets/admin"
+    front: './assets/front/js/index.js',
+    admin: './assets/admin'
   },
   plugins: [
     new ManifestPlugin(),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery"
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     }),
     new WebpackBar()
   ],
   output: {
     path: path.resolve(__dirname, '../assets/dist'),
-    filename: "[name].js",
+    filename: '[name].js',
   },
   node: { fs: 'empty' },
   externals: ['jQuery'],

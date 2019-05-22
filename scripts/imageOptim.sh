@@ -7,4 +7,4 @@ find './assets/dist' -iname "*.jpeg" -exec jpegoptim -m80 --all-progressive --st
 find './assets/dist' -iname "*.jpg" -exec jpegoptim -m80 --all-progressive --strip-all {} \;
 
 echo "\n \033[32m ###################### SVG ###################### \033[0m"
-find './assets/dist' -iname "*.svg" -exec npx svgo {} \;
+find './assets/dist' -iname "*.svg" -exec npx svgo --disable removeViewBox {} \;
