@@ -1,13 +1,13 @@
 {
   "name": "#name#",
-  "version": "2.1.0",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
-    "prestart": "php -r \"file_put_contents('.env', 'development');\";rm -rf assets/dist;",
-    "start": "env NODE_ENV=development npx webpack-dev-server --hot --inline --config config/webpack/webpack.dev.js",
-    "prebuild": "php -r \"file_put_contents('.env', 'production');\"; php ./scripts/version.php; rm -rf assets/dist;",
-    "build": "env NODE_ENV=production npx webpack --config config/webpack/webpack.prod.js ",
-    "postbuild": "./scripts/imageOptim.sh",
+    "prestart": "./config/prestart.sh",
+    "start": "./config/start.sh",
+    "prebuild": "./config/prebuild.sh",
+    "build": "./config/build.sh",
+    "postbuild": "./config/postbuild.sh",
     "install": "napa",
     "prettify": "prettier --write '{assets,__{tests,mocks}__}/**/*.js'"
   },
