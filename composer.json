@@ -27,7 +27,8 @@
     "scripts": {
       "post-install-cmd": [
             "php -r \"file_put_contents('style.css', str_replace('#name#', ucfirst(basename(__DIR__)), file_get_contents('style.css')));\"",
-            "php -r \"file_put_contents('package.json', str_replace('#name#', strtolower(basename(__DIR__)), file_get_contents('package.json')));\""
+            "php -r \"file_put_contents('package.json', str_replace('#name#', strtolower(basename(__DIR__)), file_get_contents('package.json')));\"",
+            "php -r \"file_put_contents('webpack.config.js', str_replace('#name#', strtolower(basename(__DIR__)), file_get_contents('webpack.config.js')));\""
         ]
     }
 }

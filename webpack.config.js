@@ -10,7 +10,7 @@ Encore
     // directory where compiled assets will be stored
     .setOutputPath('./assets/build')
     // public path used by the web server to access the output path
-    .setPublicPath('/wp-content/themes/wordpress-theme-kit/assets/build')
+    .setPublicPath('/wp-content/themes/#name#/assets/build')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 
