@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "Respect/Validation": "~1.1",
+        "Respect/Validation": "~2.1",
         "mobiledetect/mobiledetectlib": "^2.8"
     },
     "autoload": {
@@ -27,10 +27,7 @@
     "scripts": {
       "post-install-cmd": [
             "php -r \"file_put_contents('style.css', str_replace('#name#', ucfirst(basename(__DIR__)), file_get_contents('style.css')));\"",
-            "php -r \"file_put_contents('package.json', str_replace('#name#', ucfirst(basename(__DIR__)), file_get_contents('package.json')));\"",
-            "npm install"
-        ],
-      "build": "npm run build",
-      "watch": "npm start"
+            "php -r \"file_put_contents('package.json', str_replace('#name#', strtolower(basename(__DIR__)), file_get_contents('package.json')));\""
+        ]
     }
 }
