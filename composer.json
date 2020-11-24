@@ -20,6 +20,7 @@
         "mobiledetect/mobiledetectlib": "^2.8"
     },
     "autoload": {
+        "classmap" : ["modules/core/controllers"],
         "files": [
           "modules/autoload.php"
         ]
