@@ -46,6 +46,12 @@ Encore
     // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
 
+    .configureBabel(function(babelConfig) {
+      if (Encore.isProduction()) {
+        babelConfig.plugins.push('babel-plugin-transform-remove-console');
+      }
+    })
+
     // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
         config.useBuiltIns = 'usage';
