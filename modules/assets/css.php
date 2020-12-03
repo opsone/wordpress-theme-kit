@@ -2,10 +2,17 @@
 
 function loadCss()
 {
+  global $entrypoints;
   $theme = wp_get_theme();
-  $name = strtolower($theme->get('Name'));
-  wp_register_style('style', asset_url("wp-content/themes/$name/assets/build/front.css"), null, $theme->get('Version'));
-  wp_enqueue_style('style');
+
+  if ($entrypoints) {
+    if(isset($entrypoints['entrypoints']->front->css)) {
+      foreach ($entrypoints['entrypoints']->front->css as $key => $value) {
+        wp_register_style("style-$key", $value, null, $theme->get('Version'));
+        wp_enqueue_style("style-$key");
+      }
+    }
+  }
 }
 
 add_action('wp_enqueue_scripts', 'loadCss');

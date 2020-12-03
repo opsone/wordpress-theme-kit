@@ -1,11 +1,13 @@
 <?php
 function asset_url($name) {
-  $manifest = file_get_contents(__DIR__ . '/../../assets/build/manifest.json');
-  if ($manifest) {
-    $files = (array) json_decode($manifest);
+  global $manifest;
+  $theme = wp_get_theme();
+  $site_name = strtolower($theme->get('Name'));
 
-    if (isset($files[$name])) {
-      return $files[$name];
+  if ($manifest) {
+    $key = "wp-content/themes/$site_name/assets/build/$name";
+    if (isset($manifest[$key])) {
+      return $manifest[$key];
     }
   }
   return $name;

@@ -25,6 +25,7 @@ Encore
      */
     .addEntry('front', './assets/front/js')
     .addEntry('admin', './assets/admin')
+    // .addStyleEntry('global', './assets/front/scss/styles.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -69,7 +70,7 @@ Encore
     // .autoProvidejQuery()
 
     .copyFiles({
-      from: './assets/media/images',
+      from: './assets/front/media',
       // optional target path, relative to the output dir
       //to: 'images/[path][name].[ext]',
 
