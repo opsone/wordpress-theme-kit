@@ -1,7 +1,7 @@
 
 /vendor/
 /node_modules/
-/assets/dist/
+/assets/build/
 /composer.phar
 /.htaccess
 /.htaccess-dist
