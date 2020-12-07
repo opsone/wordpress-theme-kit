@@ -67,7 +67,8 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    // .autoProvidejQuery()
+    .addExternals({ jquery: 'jQuery' })
+    .autoProvidejQuery()
 
     .copyFiles({
       from: './assets/front/media',
