@@ -6,7 +6,6 @@ function loadJs()
   $theme = wp_get_theme();
 
   if ($entrypoints) {
-
     if(isset($entrypoints['entrypoints']->front->js)) {
       foreach ($entrypoints['entrypoints']->front->js as $key => $value) {
         wp_register_script("app-$key", $value, array(), $theme->get('Version'), true);
@@ -23,7 +22,6 @@ function adminLoadJs()
   $theme = wp_get_theme();
 
   if ($entrypoints) {
-
     if(isset($entrypoints['entrypoints']->admin->js)) {
       foreach ($entrypoints['entrypoints']->admin->js as $key => $value) {
         wp_register_script("app-$key", $value, array(), $theme->get('Version'), true);
