@@ -10,5 +10,5 @@ function asset_url($name) {
       return $manifest[$key];
     }
   }
-  return $name;
+  return TEMPLATE_DIR . '/assets/front/' . $name . '?v=' . $theme->get('Version');
 }
