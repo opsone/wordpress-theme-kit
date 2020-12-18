@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "Respect/Validation": "~2.1",
+        "respect/validation": "~2.1",
         "mobiledetect/mobiledetectlib": "^2.8"
     },
     "autoload": {
