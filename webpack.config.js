@@ -25,7 +25,7 @@ Encore
      */
     .addEntry('front', './assets/front/js')
     .addEntry('admin', './assets/admin')
-    // .addStyleEntry('global', './assets/front/scss/styles.scss')
+    .addStyleEntry('style', './assets/front/scss/style.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

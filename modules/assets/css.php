@@ -6,8 +6,8 @@ function loadCss()
   $theme = wp_get_theme();
 
   if ($entrypoints) {
-    if(isset($entrypoints['entrypoints']->front->css)) {
-      foreach ($entrypoints['entrypoints']->front->css as $key => $value) {
+    if(isset($entrypoints['entrypoints']->style->css)) {
+      foreach ($entrypoints['entrypoints']->style->css as $key => $value) {
         wp_register_style("style-$key", $value, null, $theme->get('Version'));
         wp_enqueue_style("style-$key");
       }
