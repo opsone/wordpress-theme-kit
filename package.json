@@ -20,6 +20,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",
     "sass-loader": "^10.0.5",
+    "stimulus": "^2.0.0",
     "stylelint": "^13.9.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0",
