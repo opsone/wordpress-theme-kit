@@ -16,6 +16,8 @@
     "@symfony/webpack-encore": "^0.33.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "node-sass": "^5.0.0",
+    "postcss-loader": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",
     "sass-loader": "^10.0.5",
     "stylelint": "^13.9.0",
