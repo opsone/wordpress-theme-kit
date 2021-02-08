@@ -12,11 +12,16 @@
     "imageOptim": "./scripts/imageOptim.sh"
   },
   "devDependencies": {
+    "@namics/stylelint-bem": "^6.3.1",
     "@symfony/webpack-encore": "^0.33.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "node-sass": "^5.0.0",
     "prettier": "^2.1.2",
     "sass-loader": "^10.0.5",
+    "stylelint": "^13.9.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0",
     "webpack-notifier": "^1.8.0",
     "core-js": "^3.8.0"
   },
