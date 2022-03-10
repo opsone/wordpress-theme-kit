@@ -1,6 +1,6 @@
 {
   "name": "#name#",
-  "version": "5.0.1",
+  "version": "5.0.14",
   "private": true,
   "scripts": {
     "dev-server": "encore dev-server --port 3000",
